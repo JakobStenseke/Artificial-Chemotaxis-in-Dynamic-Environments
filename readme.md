@@ -1,4 +1,6 @@
-# Artificial-Chemotaxis-in-Dynamic-Environments
+# Artificial Chemotaxis in Dynamic Environments
+
+![Demo Animation](../assets/Screenshot.png)
 
 <b>Project Description</b>
 
