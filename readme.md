@@ -4,8 +4,7 @@
 
 # Project Description
 
-The main objective of this project is to simulate artificial agents evolving chemotaxis in a dynamic environment using probabilistic spiking neural networks. More generally, the purpose is to shed light on how organisms develop chemotaxis,
-and more particularly on how this is done in artificial systems employing the basic ’forward or rotate’ movement (as employed by C. elegans). Whereas other projects have developed more detailed neural circuits for chemotaxis, this project will test whether simple probabilistic spiking perceptrons can help artificial agents to achieve chemotaxis in a dynamic environment, only using two possible actions (moving forward or rotating) [1]. Ideally, the system will be interesting for research in fields such as artificial biology, evolutionary computing, and artificial intelligence.
+The main objective of this project is to simulate agents evolving chemotaxis in a dynamic environment. More generally, the purpose is to shed light on how organisms develop chemotaxis,and more particularly how this is done in artificial agents employing the basic ’forward or rotate’ movement (as employed by the bacteria C. elegans). Whereas other studies have developed more detailed neural circuits for bacterial chemotaxis [1], this project explores whether a single probabilistic spiking perceptrons can help simpler artificial agents to achieve chemotaxis in a dynamic environment. Ideally, the system will be interesting for research in fields such as artificial biology, evolutionary computing, and artificial intelligence.
 
 <b>Chemotaxis</b>
 
@@ -13,7 +12,7 @@ Chemotaxis is a biological term referring to the ability for organisms to move i
 
 <b>Dynamic Environment</b>
 
-Dynamic environment in this particular project is a 2-dimensional finite space (R2) with two axes (x and y). The position of any point in the environment can thus be given by an ordered pair of real numbers — e.g. (3, 5) — referring to the distance of that point relative to the origin measured along the given axis. The environment has a number of pools simulating artificial nutrition, that are randomly distributed in the space. The environment is dynamic in the sense that the pools of nutrition over time change their location at random.
+Dynamic environment in this particular project is a 2-dimensional finite space (R2) with two axes (x and y). The position of any point in the environment can thus be given by an ordered pair of real numbers — e.g. (3, 5) — referring to the distance of that point relative to the origin measured along the given axis. The environment has a point simulating a source of nutrition that is randomly moving around in the space. The environment is thus dynamic in the sense that the source of nutrition randomly changes its location over time.
 
 <b>Artificial Agents</b>
 
@@ -23,20 +22,20 @@ Artificial agents are equipped with five main properties:
 
 <b>• Motor</b> — Similar to the flagella of the bacteria Escherichia coli (also known as E. coli), the motor enables agents to behave in either one of two ways: (1) move forward in a straight line or (2) rotate at random.
 
-<b>• Perceptor</b> — Enables the agents to receive input from their environment, and gives a value determined by the distance between agent and the nutrition source (the environmental chemical gradient).
+<b>• Perceptor</b> — Enables the agents to receive input value from their current environment, determined by the distance between agent and the nutrition source (the environmental chemical gradient).
 
-<b>• Neuron</b> — Takes the input value from the perceptor, subtracts it with the previous perceptor value and then adds a neural bias value unique to the agent. The result is an output that determines the probability for an agent to move forward (instead of rotating). For instance, if the new input (NI) is 0.5, previous input (PI) is 0.3, and the neural bias (B) is 0.5, the the neuron has a 70% probability of firing (since NI — PI + B = 0.7), and the agent moves forward [6]. The reason for taking new input subtracted by the previous input is that it enables the agents to perceive the change of nutrition concentration in the environment over time rather than the concentration of nutrition at a given moment (which would not allow them to sense whether or not they are moving towards a higher concentration). The reason for using probabilistic neural firing rather than having the neurons building up potential over time — as done in more conventional spiking neural networks — is purely for simplification.
+<b>• Neuron</b> — Takes the input value from the perceptor, subtracts it with the previous perceptor value and then adds a neural bias value unique to the agent. The result is an output that determines the probability for an agent to move forward (instead of rotating). For instance, if the new input (NI) is 0.5, previous input (PI) is 0.3, and the neural bias (B) is 0.5, the the neuron has a 70% probability of firing (since NI — PI + B = 0.7), and the agent moves forward [6]. The reason for having new input subtracted by the previous input is that it enables the agents to perceive the change of nutrition concentration in the environment over time rather than the concentration of nutrition at a given moment (which would not allow them to sense whether or not they are moving towards a higher concentration). The reason for using probabilistic neural firing rather than having the neurons building up potential over time — as done in more conventional spiking neural networks — is purely for simplification.
 
-<b>• Energy level</b> — At birth, the agents are given an energy value that is either increasing or decreasing at every step depending on the concentration of nutrition of their current environment. Consequently, an agent who is able to navigate to a higher concentration of nutrition will be rewarded by an increased energy value.
+<b>• Energy level</b> — At birth, the agents are given an energy value that is either increasing or decreasing at every step depending on the concentration of nutrition of their current environment. Consequently, an agent able to navigate to a higher concentration of nutrition will be rewarded by an increased energy value.
 
-<b>• Evolution</b> — After a set number of steps, the agents receive feedback on their current neural bias (that determines the frequency of their neural firing) based on the difference between the agents current energy value and previous energy. If the new energy value is lower than the previous one, the neural bias is changed. However, it is still undecided what would be an appropriate system for neural change (e.g. whether the bias value ought to increase or decrease). Ideally, learning rate (how often the agents change their bias) and learning value (the amount of change of the bias) can be modified in the UI.
+<b>• Evolution</b> — After a set number of steps, the agents update their neural bias that determine the frequency of their neural firing. The new bias is calculated based on the difference between the agents current energy value and highest achieved energy value, and the corresponding difference between the current bias and the bias that achieved the smallest loss of energy.
 
 <b>Algorithm</b>
 
-The algorithm of the program is designed in the following way:
-1. A number of agents are spawned and randomly distributed in the environment. The agents are given initial neural bias values at random. The source of nutrition is placed in the environment.
+The evolutionary algorithm is designed in the following way:
+1. A number of agents are spawned and randomly distributed in the environment. The agents are given initial neural bias values randomly. The source of nutrition is placed in the environment.
 2. The agents receive new input from the environment (their proximity to the nutrition source) and calculate their neural output based on their previous input and neural bias. The neural output determines the probability that agents move or rotate at random.
-3. Step two repeats for a set number of times until evolution occurs, where energy levels are evaluated and the neural biases are changed. 
+3. Step two repeats for a set number of times until evolution occurs, where energy levels are evaluated and the neural biases are changed.
 4. Step two and three then repeats again until the simulation is stopped.
 
 <b>Software Requirements</b>
@@ -45,7 +44,7 @@ The simulation is made using Unity Engine (version 2017.2.3p3 Personal, download
 
 <b>Run</b>
 
-To run the application, simply press "+10 agents" any number of times, and then the play button to start the simulation. Use the speed and zoom sliders to modify the simulation. Press reset to restart the application. Different screen resolutions might result in a slightly different design of the GUI. The text displays the following: 
+To run the application, simply press "+10 agents" any number of times, and then the play button to start the simulation. Using Unity, make sure that the "MainScene" is the current scene. Use the speed and zoom sliders to modify the simulation. Press reset to restart the application. Different screen resolutions might result in a slightly different design of the GUI. The text displays the following: 
 - <b>Cycle</b> refers to the current movement-perception cycle of the agent.
 - <b>Generation</b> to the current generation (100 cycles).
 - <b>Population</b> is the number of current agents.
