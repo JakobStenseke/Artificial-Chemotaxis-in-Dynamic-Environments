@@ -1,8 +1,8 @@
 # Artificial Chemotaxis in Dynamic Environments
 
-![Demo Animation](../assets/Screenshot.png)
+![Screenshot](/Screenshot.png)
 
-<b>Project Description</b>
+# Project Description
 
 The main objective of this project is to simulate artificial agents evolving chemotaxis in a dynamic environment using probabilistic spiking neural networks. More generally, the purpose is to shed light on how organisms develop chemotaxis,
 and more particularly on how this is done in artificial systems employing the basic ’forward or rotate’ movement (as employed by C. elegans). Whereas other projects have developed more detailed neural circuits for chemotaxis, this project will test whether simple probabilistic spiking perceptrons can help artificial agents to achieve chemotaxis in a dynamic environment, only using two possible actions (moving forward or rotating) [1]. Ideally, the system will be interesting for research in fields such as artificial biology, evolutionary computing, and artificial intelligence.
