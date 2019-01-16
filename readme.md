@@ -4,7 +4,7 @@
 
 # Project Description
 
-The main objective of this project is to simulate agents evolving chemotaxis in a dynamic environment. More generally, the purpose is to shed light on how organisms develop chemotaxis,and more particularly how this is done in artificial agents employing the basic ’forward or rotate’ movement (as employed by the bacteria C. elegans). Whereas other studies have developed more detailed neural circuits for bacterial chemotaxis [1], this project explores whether a single probabilistic spiking perceptrons can help simpler artificial agents to achieve chemotaxis in a dynamic environment. Ideally, the system will be interesting for research in fields such as artificial biology, evolutionary computing, and artificial intelligence.
+The main objective of this project is to simulate agents evolving chemotaxis in a dynamic environment. More generally, the purpose is to shed light on how organisms develop chemotaxis, and more particularly how this is done in artificial agents employing the basic ’forward or rotate’ movement (as employed by the bacteria C. elegans). Whereas other studies have developed more detailed neural circuits for bacterial chemotaxis [1], this project explores whether a single probabilistic spiking perceptrons can help simpler artificial agents to achieve chemotaxis in a dynamic environment. Ideally, the system will be interesting for research in fields such as artificial biology, evolutionary computing, and artificial intelligence.
 
 <b>Chemotaxis</b>
 
