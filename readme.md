@@ -40,7 +40,7 @@ The evolutionary algorithm is designed in the following way:
 
 <b>Software Requirements</b>
 
-The simulation is made using Unity Engine (version 2017.2.3p3 Personal, downloaded here: https://store.unity.com/download?ref=personal). There are several reasons for choosing Unity: it offers several easy-to-use functions, such as a framework for simulating time and space (2D/3D coordinate systems), motion and collision, monitoring, and other handy design features. Unity is thus needed in order to properly test and assess the project. However, I have also made a Windows and a Mac build of the application that can be found in the "Builds" folder. It is thus possible to run the application without downloading Unity (but one is unable to modify the simulation).
+The simulation is made using <a href="https://store.unity.com/download?ref=personal">Unity Engine</a> (version 2017.2.3p3 Personal). It is needed in order to properly test and assess the project. However, I have also made a Windows and a Mac build of the application that can be found in the "Builds" folder. It is thus possible to run the application without downloading Unity (but one is unable to modify the simulation).
 
 <b>Run</b>
 
