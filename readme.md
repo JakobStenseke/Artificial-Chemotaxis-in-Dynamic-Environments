@@ -40,7 +40,7 @@ The evolutionary algorithm is designed in the following way:
 
 <b>Software Requirements</b>
 
-The simulation requires <a href="https://store.unity.com/download?ref=personal">Unity Engine</a> (version 2017.2.3p3 Personal). However, I have also made a Windows and a Mac build of the application that can be found in the "Builds" folder. It is thus possible to run the simulation without downloading Unity (but one is unable to modify it).
+Requires <a href="https://store.unity.com/download?ref=personal">Unity Engine</a> (version 2017.2.3p3 Personal). However, I have also made a Windows and a Mac build of the application that can be found in the "Builds" folder. It is thus possible to run the simulation without downloading Unity (but one is unable to modify it).
 
 <b>Run</b>
 
